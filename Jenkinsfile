@@ -20,9 +20,9 @@ pipeline {
                 label 'docker_host'
             }
             steps {
-                sh 'docker compose build'
-                sh 'docker compose up -d --no-color --wait'
-                sh 'docker compose ps'
+                sh 'docker-compose build'
+                sh 'docker-compose up -d --no-color --wait'
+                sh 'docker-compose ps'
             }
         }
         stage('Run Test against the container...') {
@@ -30,9 +30,9 @@ pipeline {
                 label 'docker_host'
             }
             steps {
+                echo 'Container is running...'
                 
-                sh 'docker compose up -d --no-color --wait'
-                sh 'docker compose ps Container is running'
+                sh 'docker-compose ps Container is running'
         }   }
     }
 }
