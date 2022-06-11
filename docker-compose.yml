@@ -1,0 +1,24 @@
+version: '3.8'
+services:
+  angular:
+    container_name: angular-cicd
+    image: angular-cicd
+    build:
+      context: /home/administrator/proyects/angular_ci-cd
+    mem_limit: 1024mb
+    mem_reservation: 512mb
+    cpuset: "1"
+    ports:
+      - "8815:80"
+    restart: unless-stopped
+    #volumes:
+    #  - $PWD/src:/usr/share/nginx/html
+    volumes:
+       - deploy_app:/usr/share/nginx/html
+    networks:
+      - net
+volumes:
+  deploy_app:
+    external: true
+networks:
+   net:
