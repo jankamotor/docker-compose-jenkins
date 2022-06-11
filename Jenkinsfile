@@ -32,7 +32,7 @@ pipeline {
             steps {
                 echo 'Container is running...'
                 
-                sh 'docker-compose ps Container is running'
+                sh 'docker-compose ps'
         }   }
     }
 }
