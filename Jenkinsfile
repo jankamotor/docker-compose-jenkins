@@ -20,7 +20,7 @@ pipeline {
                 label 'docker_host'
             }
             steps {
-                
+                sh 'docker compose build'
                 sh 'docker compose up -d --no-color --wait'
                 sh 'docker compose ps'
             }
@@ -33,6 +33,6 @@ pipeline {
                 
                 sh 'docker compose up -d --no-color --wait'
                 sh 'docker compose ps Container is running'
-            }
+        }   }
     }
 }
